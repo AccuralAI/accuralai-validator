@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Mapping, Optional, Sequence
 
-from pydantic import BaseModel, Field, ValidationError, model_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 
 class RegexValidatorOptions(BaseModel):
@@ -74,7 +74,9 @@ class PromptInjectionValidatorOptions(BaseModel):
 class JsonValidatorOptions(BaseModel):
     """Options for JSON schema validation."""
 
-    schema: Optional[Dict[str, Any]] = None
+    model_config = ConfigDict(populate_by_name=True)
+
+    inline_schema: Optional[Dict[str, Any]] = Field(default=None, alias="schema")
     schema_source: str = Field(default="metadata")
     schema_key: str = Field(default="json_schema")
     mode: str = Field(default="schema")  # "schema" or "structure"

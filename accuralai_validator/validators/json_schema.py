@@ -27,8 +27,8 @@ class JsonValidator(Validator):
         self._options = options
         self._validator_id = validator_id
         self._inline_validator = None
-        if options.schema:
-            self._inline_validator = Draft202012Validator(options.schema)
+        if options.inline_schema:
+            self._inline_validator = Draft202012Validator(options.inline_schema)
 
     async def validate(self, response: GenerateResponse, *, request: GenerateRequest) -> GenerateResponse:
         parsed, parse_error = self._parse_json(response.output_text)
@@ -92,8 +92,8 @@ class JsonValidator(Validator):
         return parsed, None
 
     def _resolve_schema(self, request: GenerateRequest) -> Optional[Dict[str, Any]]:
-        if self._options.schema:
-            return self._options.schema
+        if self._options.inline_schema:
+            return self._options.inline_schema
 
         container: Mapping[str, Any] | None
         if self._options.schema_source == "metadata":
