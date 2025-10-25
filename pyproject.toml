@@ -26,6 +26,7 @@ dev = [
 "toxicity" = "accuralai_validator.validators.toxicity:build_toxicity_validator"
 "prompt_injection" = "accuralai_validator.validators.prompt_injection:build_prompt_injection_validator"
 "json_schema" = "accuralai_validator.validators.json_schema:build_json_validator"
+"tool" = "accuralai_validator.validators.tool:build_tool_validator"
 
 [project.urls]
 homepage = "https://accural-ai.web.app/"
