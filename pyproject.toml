@@ -28,8 +28,8 @@ dev = [
 "json_schema" = "accuralai_validator.validators.json_schema:build_json_validator"
 
 [project.urls]
-homepage = "https://github.com/accuralai/accuralai-validator"
-repository = "https://github.com/accuralai/accuralai-validator"
+homepage = "https://accural-ai.web.app/"
+repository = "https://github.com/AccuralAI/accuralai-validator"
 
 [build-system]
 requires = ["hatchling"]
