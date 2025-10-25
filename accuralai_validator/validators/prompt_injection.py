@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Mapping, Optional, Sequence, Set
+from typing import Any, Mapping, Optional, Set
 
 from accuralai_core.config.schema import ValidatorSettings
 from accuralai_core.contracts.models import GenerateRequest, GenerateResponse

@@ -2,15 +2,13 @@
 
 from __future__ import annotations
 
-import json
-from typing import Any, Dict, List, Mapping, Optional, Set
+from typing import Any, List, Mapping, Optional
 
 from accuralai_core.config.schema import ValidatorSettings
 from accuralai_core.contracts.models import GenerateRequest, GenerateResponse
 from accuralai_core.contracts.protocols import Validator
 
-from ..base import ValidationEvent, append_event, update_finish_reason
-from ..config import parse_options
+from ..base import ValidationEvent, append_event
 
 
 class ToolValidatorOptions:
